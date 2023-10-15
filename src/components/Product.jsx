@@ -15,7 +15,7 @@ const Product = ({post}) => {
      </div>
      <button>
       {
-        true ? <p>Remove Item</p> : <p>Add to Cart</p>
+        
       }
      </button>
     </div>
