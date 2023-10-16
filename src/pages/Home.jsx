@@ -9,7 +9,7 @@ const [loading, setLoading] = useState(false);
 const [posts, setPosts] = useState([]);
 
 
-async function fetchProductData(){
+async function fetchProductData() {
   setLoading(true);
   try{
       const res = await fetch(API_URL);
@@ -37,7 +37,7 @@ useEffect(() => {
          (<div>
         {
           posts.map( (post) => (
-            <Product key = {posts.id} post={post}/>
+            <Product key = {post.id} post={post}/>
           ))
         }
          </div>) : 

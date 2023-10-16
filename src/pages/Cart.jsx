@@ -1,16 +1,20 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import CartItem from "../components/CartItem";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux"
 
 const Cart = () => {
+
   const { cart } = useSelector((state) => state);
+  console.log("Printing Cart");
+  console.log(cart);
   const [totalAmount, setTotalAmount] = useState(0);
 
 
   useEffect(() => {
-    setTotalAmount(cart.reduce((acc, curr) => acc + curr.price,0));
-  },[cart])
+    setTotalAmount(cart.reduce(  (acc, curr) => acc + curr.price,0) );
+  }, [cart])
 
   return (
     <div>
@@ -21,7 +25,7 @@ const Cart = () => {
               <div>
                 {
                   cart.map((item, index) => {
-                    return <CartItem key={item.id} itemIndex={item} />
+                    return <CartItem key={item.id} item={item} itemIndex={index} />
                   })
                 }
               </div>

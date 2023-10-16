@@ -10,14 +10,14 @@ const CartItem = ({ item, itemIndex }) => {
 
   const removeFromCart = () => {
     dispatch(remove(item.id));
-    toast.success("Item removed");
+    toast.error("Item removed");
   }
   return (
     <div>
       <div>
 
         <div>
-          <img src={item.image} />
+          <img src={item.image} alt="cart-demo-img"/>
         </div>
         <div>
           <h1>{item.title}</h1>
