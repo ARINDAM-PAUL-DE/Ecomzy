@@ -4,8 +4,9 @@ import {Link} from "react-router-dom";
 import {useSelector} from "react-redux"
 
 const Cart = () => {
-  const [totalAmount, setTotalAmount] = useState(0);
   const { cart } = useSelector((state) => state);
+  const [totalAmount, setTotalAmount] = useState(0);
+
 
   useEffect(() => {
     setTotalAmount(cart.reduce((acc, curr) => acc + curr.price,0));
